@@ -13,7 +13,7 @@ io.on('connection', (socket) => {
         console.log('Message received: ' + message.text);
 
         // io.emit everyone including sender
-        socket.broadcast.emit('message', message); // everyone except sender
+        io.emit('message', message); // everyone except sender
     });
 
     socket.emit('message', {
